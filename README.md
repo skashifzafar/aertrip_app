@@ -1,63 +1,64 @@
-# Organisation Log
-Rest API for documenting departments and employees in an organisation.
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-**Prerequisites:**
-- Php7.1 or Higher
-- Composer
-- MySql
-- Laravel 5.6 or higher
-- Postman (for testing)
+<p align="center">
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-**Overview of the Application**
-The application is designed to maintain the department and employees of an organisation. The following functionalities are provided in the application:
+## About Laravel
 
-- Creating departments
-- Add employees
-- Edit employees
-- View employees
-- Delete employees
-- Search employees
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-We have a DB named "aertrip" with the following tables:
-- Departments
-  - id (auto incremented)
-  - name
-  - description
-- Employees
-  - id (auto incremented)
-  - name
-  - department
-  - phone_num (an employee can have multiple phone numbers delimited by ";")
-  - address (an employee can have multiple addresses delimited by ";")
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-The application has following endpoints:
-- POST: /api/department/add : Creates new department entry.
-  - input: {"name": $name, "description": $description}
-  - output: {"name": $name, "description": $description, "updated_at": $time_stamp, "created_at": $timestamp}
-- POST: /api/employee/add : Creates new employee entry.
-  - input: {"name": $name, "department_name": $dept_name, "phone_numbers": $list_of_phone_numbers, "addresses": $list_of_addresses}
-  - output: {"name": $name, "department": $dept_name,"phone_numbers": $list_of_phone_numbers, "addresses": $list_of_addresses>, "updated_at": $timestamp, "created_at": $timestamp, "id": $id}
-- PUT:  /api/employee/update?employee_id=$id : Updates an existing employee data.
-  - input: {"name": $name, "department_name": $dept_name, "phone_numbers": $list of phone numbers, "addresses": $list_of_addresses}
-  - output: {"name": $name, "department": $dept_name,"phone_numbers": $list_of_phone_numbers, "addresses": $list_of_addresses>, "updated_at": $timestamp, "created_at": $timestamp}
-- GET:  /api/employee/search?employee_name=$name : search for all the employees with the given name.
-  - input: {}
-  - output: {"id": $id,"name": $name, "department": $dept_name, "phone_num": $phone numbers, "address": $addresses, "created_at": $timestamp, "updated_at": $timestamp}
-- GET:  /api/employee/view?employee_id=$id: View records specific to the requested employee.
-  - input: {}
-  - output: {"id": $id,"name": $name, "department": $dept_name, "phone_num": $phone numbers, "address": $addresses, "created_at": $timestamp, "updated_at": $timestamp}
-- DEL:  /api/employee/delete?employee_id=$id : Delete employee data.
-  - input: {}
-  - output: {"id": $id,"name": $name, "department": $dept_name, "phone_num": $phone numbers, "address": $addresses, "created_at": $timestamp, "updated_at": $timestamp}
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
+## Learning Laravel
 
-MVC architecture is followed in this application with the following directories:
-- M(model):aertrip_app\app\Models
-- V(view): this utility is handled by json
-- C(controller):aertrip_app\app\Http\Controllers
- 
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
+## Laravel Sponsors
 
-  
-  
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+
+### Premium Partners
+
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Cubet Techno Labs](https://cubettech.com)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[Many](https://www.many.co.uk)**
+- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+- **[DevSquad](https://devsquad.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
+- **[OP.GG](https://op.gg)**
+- **[CMS Max](https://www.cmsmax.com/)**
+- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
+
+## Contributing
+
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+
+## Code of Conduct
+
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+
+## Security Vulnerabilities
+
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
